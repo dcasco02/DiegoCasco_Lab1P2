@@ -18,7 +18,6 @@ public class DiegoCasco_Lab1P2 {
      */
     public static void main(String[] args) {
      Scanner lea=new Scanner(System.in); 
-     String coordenadas;
      int size=8;
      char [][]matriz_rojo=new char[size][size];
      char [][]matriz_azul=new char[size][size];
@@ -26,10 +25,12 @@ public class DiegoCasco_Lab1P2 {
      matriz_azul = llenado(size);
      int barcos_rojo=3;
      int barcos_azul=3;
-     
-     for(int i=0;i==barcos_rojo;i++){
-         System.out.println("Ingrese las coordenadas de Barcos rojos");
-         
+     for(int i=1;i==barcos_rojo;i++){
+        String coordenadas;
+        System.out.println("Ingrese las coordenadas de Barcos rojos");
+        coordenadas=lea.next();
+        String []tokens=coordenadas.split(";");
+        System.out.println(tokens[1]);
      }
     }
     public static char[][]llenado(int size){
