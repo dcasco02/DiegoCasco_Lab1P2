@@ -19,6 +19,7 @@ public class DiegoCasco_Lab1P2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        boolean turnorojo;
         int size = 8;
         char[][] matriz_rojo = new char[size][size];
         char[][] matriz_azul = new char[size][size];
@@ -27,10 +28,26 @@ public class DiegoCasco_Lab1P2 {
         int barcosrojo = 3;
         int barcosazul = 3;
         matriz_rojo = barcosrojo(matriz_rojo);
-        Imprimirrojo(matriz_rojo);
-        /*while(barcosrojos!=0||barcosazul!=0){
-            
-        }*/
+        matriz_azul = barcosazul(matriz_azul);
+        while (barcosrojo != 0 || barcosazul != 0) {
+            if (turnorojo = true) {
+                System.out.println("Turno Rojo");
+                String coordenadas;
+                char xc;
+                char yc;
+                System.out.println("Ingrese las coordenadas de Barco(x,y): ");
+                coordenadas = lea.next();
+                String[] tokens = coordenadas.split(",");
+                xc = tokens[0].charAt(1);
+                yc = tokens[1].charAt(0);
+                int x = Character.getNumericValue(xc);
+                int y = Character.getNumericValue(yc);
+                if()
+            }if (turnorojo = false) {
+
+            }
+
+        }
     }
 
     public static char[][] llenado(int size) {
