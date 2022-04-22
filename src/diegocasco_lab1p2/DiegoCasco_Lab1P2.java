@@ -24,17 +24,17 @@ static Scanner lea=new Scanner(System.in);
         matriz_azul = llenado(size);
         int barcos_rojo = 0;
         int barcosazul = 0;
-        while(barcos_rojo>=3)
-        Imprimirazul(matriz_azul);
-        Imprimirrojo(matriz_rojo);
         for (int i = 1; i == 3; i++) {
             String coordenadas;
-            char Coordenadas;
+            char x;
+            char y;
             System.out.println("Ingrese las coordenadas de Barcos rojos");
             coordenadas = lea.next();
             String[] tokens = coordenadas.split(",");
-            Coordenadas = tokens[0].charAt(1);
-            System.out.println(Coordenadas);
+            x = tokens[0].charAt(1);
+            y = tokens[1].charAt(1);
+            System.out.println(x);
+            System.out.println(y);
         }
     }
 
@@ -42,7 +42,7 @@ static Scanner lea=new Scanner(System.in);
         char[][] temporal = new char[size][size];
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                temporal[i][j] = 0;
+                temporal[i][j] = '0';
             }
         }
         return temporal;
