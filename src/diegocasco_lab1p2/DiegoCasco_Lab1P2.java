@@ -133,7 +133,7 @@ public class DiegoCasco_Lab1P2 {
                 matriz_rojo[xrojo + 2][yrojo] = '-';
                 }
             } else if (orientacion == '>') {
-                if(yrojo==6||yrojo==6){
+                if(yrojo==6){
                   System.out.println("Valor fuera de Rango");
                 }else{
                 matriz_rojo[xrojo][yrojo] = '-';
@@ -168,7 +168,7 @@ public class DiegoCasco_Lab1P2 {
                 matriz_azul[x + 1][y] = '-';
                 matriz_azul[x + 2][y] = '-';
             } else if (orientacion == '>') {
-                if(x==7){
+                if(x==6){
                    System.out.println("Valor fuera de Rango volver a empezar"); 
                 }
                 matriz_azul[x][y] = '-';
