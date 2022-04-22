@@ -22,20 +22,11 @@ static Scanner lea=new Scanner(System.in);
         char[][] matriz_azul = new char[size][size];
         matriz_rojo = llenado(size);
         matriz_azul = llenado(size);
-        int barcos_rojo = 0;
-        int barcosazul = 0;
-        for (int i = 1; i == 3; i++) {
-            String coordenadas;
-            char x;
-            char y;
-            System.out.println("Ingrese las coordenadas de Barcos rojos");
-            coordenadas = lea.next();
-            String[] tokens = coordenadas.split(",");
-            x = tokens[0].charAt(1);
-            y = tokens[1].charAt(1);
-            System.out.println(x);
-            System.out.println(y);
-        }
+        int barcos_rojo = 3;
+        int barcosazul = 3;
+        matriz_rojo=barcosrojo(matriz_rojo);
+        Imprimirrojo(matriz_rojo);
+        
     }
 
     public static char[][] llenado(int size) {
@@ -66,5 +57,40 @@ static Scanner lea=new Scanner(System.in);
             }
             System.out.println(" ");
         }
+    }
+    public static char[][] barcosrojo(char [][]matriz_rojo){
+        for (int i = 1; i<=3; i++) {
+            String coordenadas;
+            char x;
+            char y;
+            String orientacion;
+            System.out.println("Ingrese las coordenadas de Barcos rojos: ");
+            coordenadas = lea.nextLine();
+            String[] tokens = coordenadas.split(",");
+            x = tokens[0].charAt(1);
+            y = tokens[1].charAt(0);
+            System.out.println("Ingrese orientacio <(vertical) >(horizontal):");
+            orientacion =lea.nextLine();
+            int xrojo=Character.getNumericValue(x);
+            int yrojo=Character.getNumericValue(y);
+            for(i=0;i< matriz_rojo.length;i++){
+                for(int j=0;j < matriz_rojo[i].length;j++){
+                    if(orientacion=="<"){
+                        if(j==xrojo&&i==yrojo){
+                            matriz_rojo[i][j]='-';
+                            matriz_rojo[i+1][j]='-';
+                            matriz_rojo[i+2][j]='-';
+                        }
+                    }else if(orientacion==">"){
+                        if(i==yrojo&&j==xrojo){
+                            matriz_rojo[i][j]='-';
+                            matriz_rojo[i][j+1]='-';
+                            matriz_rojo[i][j+2]='-';
+                        }
+                    }
+                }
+            }
+        }
+        return matriz_rojo;
     }
 }
