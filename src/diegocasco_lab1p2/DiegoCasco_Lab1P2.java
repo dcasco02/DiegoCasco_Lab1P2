@@ -44,10 +44,11 @@ public class DiegoCasco_Lab1P2 {
                 int x = Character.getNumericValue(xc);
                 int y = Character.getNumericValue(yc);
                 if (matriz_azul[x][y] == '-') {
-                    JOptionPane.showMessageDialog(null, "hit");
                     turnorojo = true;
                     matriz_azul[x][y] = '+';
                 } else {
+                    System.out.println("miss");
+                    Imprimirazul(matriz_azul);
                     turnorojo = false;
                 }
             }
@@ -64,11 +65,13 @@ public class DiegoCasco_Lab1P2 {
                 int x = Character.getNumericValue(xc);
                 int y = Character.getNumericValue(yc);
                 if (matriz_azul[x][y] == '-') {
-                    JOptionPane.showMessageDialog(null, "hit");
+                    System.out.println("hit");
                     turnorojo = false;
                     matriz_azul[x][y] = '+';
                 }
                 if (matriz_rojo[x][y] != '-') {
+                    System.out.println("miss");
+                    Imprimirrojo(matriz_rojo);
                     turnorojo = true;
                 }
             }
@@ -122,13 +125,21 @@ public class DiegoCasco_Lab1P2 {
             int xrojo = Character.getNumericValue(x);
             int yrojo = Character.getNumericValue(y);
             if (orientacion == '<') {
+                if(xrojo==6){
+                    System.out.println("Valor fuera de Rango");
+                }else{
                 matriz_rojo[xrojo][yrojo] = '-';
                 matriz_rojo[xrojo + 1][yrojo] = '-';
                 matriz_rojo[xrojo + 2][yrojo] = '-';
+                }
             } else if (orientacion == '>') {
+                if(yrojo==6||yrojo==6){
+                  System.out.println("Valor fuera de Rango");
+                }else{
                 matriz_rojo[xrojo][yrojo] = '-';
                 matriz_rojo[xrojo][yrojo + 1] = '-';
                 matriz_rojo[xrojo][yrojo + 2] = '-';
+                }
             }
         }
         return matriz_rojo;
@@ -140,7 +151,7 @@ public class DiegoCasco_Lab1P2 {
             char xc;
             char yc;
             char orientacion;
-            System.out.println("Ingrese las coordenadas de Barcos rojos(x,y): ");
+            System.out.println("Ingrese las coordenadas de Barcos azul(x,y): ");
             coordenadas = lea.next();
             String[] tokens = coordenadas.split(",");
             xc = tokens[0].charAt(1);
@@ -150,10 +161,16 @@ public class DiegoCasco_Lab1P2 {
             int x = Character.getNumericValue(xc);
             int y = Character.getNumericValue(yc);
             if (orientacion == '<') {
+                if(x==6){
+                    System.out.println("Valor fuera de Rango volver a empezar");
+                }
                 matriz_azul[x][y] = '-';
                 matriz_azul[x + 1][y] = '-';
                 matriz_azul[x + 2][y] = '-';
             } else if (orientacion == '>') {
+                if(x==7){
+                   System.out.println("Valor fuera de Rango volver a empezar"); 
+                }
                 matriz_azul[x][y] = '-';
                 matriz_azul[x][y + 1] = '-';
                 matriz_azul[x][y + 2] = '-';
