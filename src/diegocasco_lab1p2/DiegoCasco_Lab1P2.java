@@ -12,7 +12,9 @@ import java.util.Scanner;
  * @author dcasc
  */
 public class DiegoCasco_Lab1P2 {
-static Scanner lea=new Scanner(System.in); 
+
+    static Scanner lea = new Scanner(System.in);
+
     /**
      * @param args the command line arguments
      */
@@ -22,11 +24,13 @@ static Scanner lea=new Scanner(System.in);
         char[][] matriz_azul = new char[size][size];
         matriz_rojo = llenado(size);
         matriz_azul = llenado(size);
-        int barcos_rojo = 3;
+        int barcosrojo = 3;
         int barcosazul = 3;
-        matriz_rojo=barcosrojo(matriz_rojo);
+        matriz_rojo = barcosrojo(matriz_rojo);
         Imprimirrojo(matriz_rojo);
-        
+        /*while(barcosrojos!=0||barcosazul!=0){
+            
+        }*/
     }
 
     public static char[][] llenado(int size) {
@@ -58,39 +62,60 @@ static Scanner lea=new Scanner(System.in);
             System.out.println(" ");
         }
     }
-    public static char[][] barcosrojo(char [][]matriz_rojo){
-        for (int i = 1; i<=3; i++) {
+
+    public static char[][] barcosrojo(char[][] matriz_rojo) {
+        for (int i = 1; i <= 3; i++) {
             String coordenadas;
             char x;
             char y;
-            String orientacion;
-            System.out.println("Ingrese las coordenadas de Barcos rojos: ");
-            coordenadas = lea.nextLine();
+            char orientacion;
+            System.out.println("Ingrese las coordenadas de Barcos rojos(x,y): ");
+            coordenadas = lea.next();
             String[] tokens = coordenadas.split(",");
             x = tokens[0].charAt(1);
             y = tokens[1].charAt(0);
             System.out.println("Ingrese orientacio <(vertical) >(horizontal):");
-            orientacion =lea.nextLine();
-            int xrojo=Character.getNumericValue(x);
-            int yrojo=Character.getNumericValue(y);
-            for(i=0;i< matriz_rojo.length;i++){
-                for(int j=0;j < matriz_rojo[i].length;j++){
-                    if(orientacion=="<"){
-                        if(j==xrojo&&i==yrojo){
-                            matriz_rojo[i][j]='-';
-                            matriz_rojo[i+1][j]='-';
-                            matriz_rojo[i+2][j]='-';
-                        }
-                    }else if(orientacion==">"){
-                        if(i==yrojo&&j==xrojo){
-                            matriz_rojo[i][j]='-';
-                            matriz_rojo[i][j+1]='-';
-                            matriz_rojo[i][j+2]='-';
-                        }
-                    }
-                }
+            orientacion = lea.next().charAt(0);
+            int xrojo = Character.getNumericValue(x);
+            int yrojo = Character.getNumericValue(y);
+            if (orientacion == '<') {
+                matriz_rojo[xrojo][yrojo] = '-';
+                matriz_rojo[xrojo + 1][yrojo] = '-';
+                matriz_rojo[xrojo + 2][yrojo] = '-';
+            } else if (orientacion == '>') {
+                matriz_rojo[xrojo][yrojo] = '-';
+                matriz_rojo[xrojo][yrojo + 1] = '-';
+                matriz_rojo[xrojo][yrojo + 2] = '-';
             }
         }
         return matriz_rojo;
+    }
+
+    public static char[][] barcosazul(char[][] matriz_azul) {
+        for (int i = 1; i <= 3; i++) {
+            String coordenadas;
+            char xc;
+            char yc;
+            char orientacion;
+            System.out.println("Ingrese las coordenadas de Barcos rojos(x,y): ");
+            coordenadas = lea.next();
+            String[] tokens = coordenadas.split(",");
+            xc = tokens[0].charAt(1);
+            yc = tokens[1].charAt(0);
+            System.out.println("Ingrese orientacio <(vertical) >(horizontal):");
+            orientacion = lea.next().charAt(0);
+            int x = Character.getNumericValue(xc);
+            int y = Character.getNumericValue(yc);
+            if (orientacion == '<') {
+                matriz_azul[x][y] = '-';
+                matriz_azul[x + 1][y] = '-';
+                matriz_azul[x + 2][y] = '-';
+            } else if (orientacion == '>') {
+                matriz_azul[x][y] = '-';
+                matriz_azul[x][y + 1] = '-';
+                matriz_azul[x][y + 2] = '-';
+            }
+        }
+        return matriz_azul;
     }
 }
