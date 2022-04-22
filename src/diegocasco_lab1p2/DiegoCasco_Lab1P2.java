@@ -5,6 +5,8 @@
  */
 package diegocasco_lab1p2;
 
+import java.util.Scanner;
+
 /**
  *
  * @author dcasc
@@ -15,13 +17,20 @@ public class DiegoCasco_Lab1P2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+     Scanner lea=new Scanner(System.in); 
+     String coordenadas;
      int size=8;
      char [][]matriz_rojo=new char[size][size];
      char [][]matriz_azul=new char[size][size];
      matriz_rojo = llenado(size);
+     matriz_azul = llenado(size);
      int barcos_rojo=3;
      int barcos_azul=3;
      
+     for(int i=0;i==barcos_rojo;i++){
+         System.out.println("Ingrese las coordenadas de Barcos rojos");
+         
+     }
     }
     public static char[][]llenado(int size){
         char [][] temporal = new char [size][size];
