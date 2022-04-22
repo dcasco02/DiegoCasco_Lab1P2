@@ -48,7 +48,6 @@ public class DiegoCasco_Lab1P2 {
                     matriz_azul[x][y] = '+';
                 } else {
                     System.out.println("miss");
-                    Imprimirazul(matriz_azul);
                     turnorojo = false;
                 }
             }
@@ -72,6 +71,7 @@ public class DiegoCasco_Lab1P2 {
                 if (matriz_rojo[x][y] != '-') {
                     System.out.println("miss");
                     Imprimirrojo(matriz_rojo);
+                    Imprimirazul(matriz_azul);
                     turnorojo = true;
                 }
             }
