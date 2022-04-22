@@ -6,6 +6,7 @@
 package diegocasco_lab1p2;
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,7 +20,7 @@ public class DiegoCasco_Lab1P2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        boolean turnorojo;
+        boolean turnorojo = true;
         int size = 8;
         char[][] matriz_rojo = new char[size][size];
         char[][] matriz_azul = new char[size][size];
@@ -42,9 +43,34 @@ public class DiegoCasco_Lab1P2 {
                 yc = tokens[1].charAt(0);
                 int x = Character.getNumericValue(xc);
                 int y = Character.getNumericValue(yc);
-                if()
-            }if (turnorojo = false) {
-
+                if (matriz_azul[x][y] == '-') {
+                    JOptionPane.showMessageDialog(null, "hit");
+                    turnorojo = true;
+                    matriz_azul[x][y] = '+';
+                } else {
+                    turnorojo = false;
+                }
+            }
+            if (turnorojo = false) {
+                System.out.println("Turno Azul");
+                String coordenadas;
+                char xc;
+                char yc;
+                System.out.println("Ingrese las coordenadas de Barco(x,y): ");
+                coordenadas = lea.next();
+                String[] tokens = coordenadas.split(",");
+                xc = tokens[0].charAt(1);
+                yc = tokens[1].charAt(0);
+                int x = Character.getNumericValue(xc);
+                int y = Character.getNumericValue(yc);
+                if (matriz_azul[x][y] == '-') {
+                    JOptionPane.showMessageDialog(null, "hit");
+                    turnorojo = false;
+                    matriz_azul[x][y] = '+';
+                }
+                if (matriz_rojo[x][y] != '-') {
+                    turnorojo = true;
+                }
             }
 
         }
