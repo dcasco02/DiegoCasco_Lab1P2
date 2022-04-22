@@ -29,8 +29,8 @@ public class DiegoCasco_Lab1P2 {
         String coordenadas;
         System.out.println("Ingrese las coordenadas de Barcos rojos");
         coordenadas=lea.next();
-        String []tokens=coordenadas.split(";");
-        System.out.println(tokens[1]);
+        String []tokens=coordenadas.split(",");
+        []tokens.CharAt(1)
      }
     }
     public static char[][]llenado(int size){
